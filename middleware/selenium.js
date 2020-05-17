@@ -1,22 +1,22 @@
 require("chromedriver");
 const selenium = require ("selenium-webdriver");
-const  driver = new selenium.Builder().forBrowser("chrome").build();
-const By = selenium.By ;
 
-const url = "https://townwork.net/appInpt/?joid=Y0055J4X";
+/*var name=req.body.name;
+var namefurikana=req.body.namefurikana;
+var ph=req.body.phone;
+var email=req.body.email;
+var sex=req.body.gender;
+var year=req.body.year;
+var month=req.body.month;
+var day=req.body.day;
+var occupation=req.body.occupation ; */
 
-var name=document.getElementById("name").value;
-var namefurikana=document.getElementById("nameHirakana").value;
-var ph="07021669796";
-var email="dd@gmail.com";
-var sex="men";
-var year="1990";
-var month="05";
-var day="22";
-var occupation="05"
+const runSelenium= async function(name,namefurikana,ph,email,year,month,day,sex,occupation){
 
-const runSelenium= async function(){
-event.preventDefault();
+  const  driver = new selenium.Builder().forBrowser("chrome").build();
+  const By = selenium.By ;
+
+  const url = "https://townwork.net/appInpt/?joid=Y005F65N";
 
   //get the browser open
 await  driver.get(url);
@@ -51,4 +51,4 @@ await  driver.findElement(By.xpath("//input[@type='submit']")).submit();
 
 };
 
-runSelenium();
+module.exports.runSelenium=runSelenium;
