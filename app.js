@@ -12,8 +12,8 @@ router.get('/',function(req,res){
 
 router.post('/', function (req, res) {
   console.log(req.body);
-  mid.runSelenium(req.body.name,req.body.namefurikana,req.body.phone,req.body.email,req.body.year,req.body.month,req.body.day,req.body.gender,req.body.occupation);
-  res.sendStatus(200)
+  mid.runSelenium(req.body.url,req.body.name,req.body.namefurikana,req.body.phone,req.body.email,req.body.year,req.body.month,req.body.day,req.body.gender,req.body.occupation);
+  res.sendFile(path.join(__dirname+'/view/success.html'));
 })
 
 

@@ -1,22 +1,10 @@
 require("chromedriver");
 const selenium = require ("selenium-webdriver");
 
-/*var name=req.body.name;
-var namefurikana=req.body.namefurikana;
-var ph=req.body.phone;
-var email=req.body.email;
-var sex=req.body.gender;
-var year=req.body.year;
-var month=req.body.month;
-var day=req.body.day;
-var occupation=req.body.occupation ; */
 
-const runSelenium= async function(name,namefurikana,ph,email,year,month,day,sex,occupation){
-
+const runSelenium= async function(url ,name,namefurikana,ph,email,year,month,day,sex,occupation){
   const  driver = new selenium.Builder().forBrowser("chrome").build();
   const By = selenium.By ;
-
-  const url = "https://townwork.net/appInpt/?joid=Y005F65N";
 
   //get the browser open
 await  driver.get(url);
@@ -41,13 +29,14 @@ await driver.findElement(By.xpath(`//select[@id='selectfield002']//option[@value
 
   //sex
   //driver.findElement(By.xpath("//li//label[@for='men']")).click();
-await  driver.findElement(By.xpath(`//li//label[@for="${sex}"]`)).click();
+await driver.findElement(By.css(`#${sex}`)).click();
+
 
 
   //current occupation
 await  driver.findElement(By.xpath(`//select[@id='selectfield003']//option[@value=${occupation}]`)).click();
 
-await  driver.findElement(By.xpath("//input[@type='submit']")).submit();
+await  driver.findElement(By.xpath("//div[@class='center-btn-wrap']//input[@value='同意して送信']")).click();
 
 };
 
