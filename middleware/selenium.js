@@ -38,6 +38,10 @@ await  driver.findElement(By.xpath(`//select[@id='selectfield003']//option[@valu
 
 await  driver.findElement(By.xpath("//div[@class='center-btn-wrap']//input[@value='同意して送信']")).click();
 
+//await  driver.findElement(By.xpath("//div[@class='btn-wrap']//input")).click();
+
+
+
 };
 
 module.exports.runSelenium=runSelenium;

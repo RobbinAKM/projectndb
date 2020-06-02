@@ -87,8 +87,23 @@
 
 p {
 	color: red;
+	height:100px;
+	width: 55%;
 }
 
-input:invalid {
-  border: 2px dashed red;
+
+.container {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#consent{
+	margin-bottom: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .container, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
 }

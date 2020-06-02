@@ -7,35 +7,24 @@
 </head>
 
 <body>
-  <div class="container">
 <img src="ndb.jpg" alt="ndb-logo">
   <div class="form-style-2">
   <form action="/" method="post">
-     <div class="col-25">
-    <label for="field1"><span> အလုပ်နံပါတ်</span>
-      <select name="url" class="select-field" id="url">
-        <option value="https://townwork.net/appInpt/?joid=Y005JPNT&opf=A">JOB 1</option>
-        <option value="https://townwork.net/appInpt/?joid=Y005HYLY&opf=PR1">JOB 2</option>
-        </select>
+    <label for="field1"><span>
+url：<span class="required">*</span></span><input type="text"  class="input-field" name="url" id="url">
 </label>
-<p>လျှောက်ထားလိုသည့်အလုပ်နာပါတ်ကိုရွေးပါ။နာပါတ်ကို အလုပ်ခေါ်စာ ထိပ်တွင်ကြည့်ပါ</p>
-</div>
-
- <div class="col-25">
   <label for="field1"><span>
-နာမည်<span class="required">*</span></span><input type="text" placeholder="eg:Aung Aung" class="input-field" name="name" id="name"  minlength="2" maxlength="14" required>
+කෙටි නම：<span class="required">*</span></span><input type="text"  class="input-field" name="name" id="name">
   </label>
-  <p>Romaji (English) ဖြင့်မိမိအမည်ကိုရေးပါ</p>
-</div>
-
-  <div class="col-25">
+  <p>This cannot be empty</p>
   <label for="field2"><span>
-ဟိရခန အမည် <span class="required">*</span></span><input type="text" placeholder="eg:あう　あう"　class="input-field" name="namefurikana" pattern="(?=.*?[\u3041-\u309F])[\u3041-\u309F\s]*" id="namefurikana" maxlength="20" required>
+  හිරගනා වලින් කෙටි නම <span class="required">*</span></span><input type="text"  class="input-field" name="namefurikana" id="namefurikana">
   </label>
-  <p>မိမိအမည်ကိုဟိရခန ဖြင့်ရေးပါ</p>
-   <div class="form-style-2-heading2">မွေးနေ့<span class="required">*</span></div><br>
+  <p>This cannot be empty</p>
+   <div class="form-style-2-heading2">උපන් දිනය<span class="required">*</span></div><br>
   <label for="field4"><span>year</span>
     <select name="year" class="select-field" id="year">
+      <option value="null">Year</option>
       <option value="1900">1900</option>
       <option value="1901">1901</option>
       <option value="1902">1902</option>
@@ -145,6 +134,7 @@
   </label>
   <label for="field4"><span>Month</span>
     <select name="month" class="select-field" id="month">
+      <option value="null">Month</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -161,6 +151,7 @@
   </label>
   <label for="field4"><span>Day</span>
     <select name="day" class="select-field" id="day">
+      <option value="null">Day</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -194,63 +185,45 @@
       <option value="31">31</option>
       </select>
   </label>
-  <p>သင့်မွေးနေ့ကိုရွေးချယ်ပါ</p>
-</div>
-
-<div class="col-25">
-  <label for="field5"><span>gender：<span class="required">*</span></span>
+  <p>This cannot be empty</p>
+  <label for="field5"><span>ස්ත්රී පුරුෂ භාවය：<span class="required">*</span></span>
 <select name="gender" class="select-field" id="gender">
-  <option value="men">male</option>
-  <option value="women">female</option>
+  <option value="men">පිරිමි</option>
+  <option value="women">ගැහැණු</option>
 </select>
   </label>
-  <p>ကျေးဇူးပြု၍ ရွေးချယ်ပါ</p>
-</div>
-
-<div class="col-25">
+  <p>This cannot be empty</p>
   <label for="phone"><span>
-ဖုန်းနံပါတ်：<span class="required">*</span></span><input type="phone" class="input-field" name="phone" id="phone" placeholder="eg:08011112222" pattern="\d{3}\d{4}\d{4}" required>
+දුරකථන：<span class="required">*</span></span><input type="text" class="input-field" name="phone" id="phone"  pattern="\d{3}\d{4}\d{4}">
   </label>
-  <p>နာပါတ် ၁၁ လုံးရှိသောလက်ကိုင်ဖုန်းနာပါတ်ကိုထည့်ပါ</p>
-  <label for="field7"><span>အလုပ်အကိုင်<span class="required">*</span></span>
+  <p>This cannot be empty</p>
+  <label for="field7"><span>රැකියාව<span class="required">*</span></span>
   <select name="occupation" class="select-field" id="occupation">
-    <option value = "01"> အထက်တန်းကျောင်း </option>
-    <option value = "02"> တက္ကသိုလ်ကျောင်း </option>
-    <option value = "03"> ဘွဲ့ရ </option>
-    <option value = "04"> junior college ကျောင်း </option>
-    <option value = "05">senmon ကျောင်း (vocational school) </option>
-    <option value = "06"> အချိန်ပိုင်းအလုပ် </option>
-    <option value = "07"> အမြဲတမ်း၀န်ထမ်း </option>
-    <option value = "08"> ကန်ထရိုက်ဝန်ထမ်းများ </option>
-    <option value = "09"> အိမ်ထောင်ရှင် </option>
-    <option value = "10"> အလုပ်လက်မဲ့ </option>
-    <option value = "11"> အခြား </option>
+<option>කරුණාකර තෝරන්න</option>
+<option value="01">උසස් පාසැල</option>
+<option value="02">විශ්ව විද්‍යාල ශිෂ්‍යයා</option>
+<option value="03">උපාධිධාරියෙක්</option>
+<option value="04">කණිෂ්ඨ විශ්ව විද්‍යාල ශිෂ්‍යයා</option>
+<option value="05">වෘත්තීය පාසල</option>
+<option value="06">අර්ධකාලීන රැකියාව</option>
+<option value="07">නිත්‍ය සේවකයෙක්</option>
+<option value="08">කොන්ත්‍රාත් සේවකයින්</option>
+<option value="09">ගෘහණියන්</option>
+<option value="10">රැකියා විරහිත</option>
+<option value="11">වෙනත්</option>
+
   </select>
   </label>
-  <p>သင့်လက်ရှိအလုပ်အကိုင်ကိုရွေးချယ်ပါ
-    အမြဲတမ်း၀န်ထမ်းသည် အလုပ်ဗီဇာ ဖြစ်ပါက အခြားအလုပ်လုပ်ကိုင်၍မရနိုင်ပါ
-ကန်ထရိုက်ဝန်ထမ်း=派遣</p>
-</div>
-
-<div class="col-25">
+  <p>This cannot be empty</p>
   <label for="field8"><span>
-အီးမေးလ်：<span class="required">*</span></span><input type="email" placeholder="eg:agag@mymail.com" class="input-field" name="email" id="email">
+විද්යුත් තැපෑල：<span class="required">*</span></span><input type="email"  class="input-field" name="email" id="email">
   </label>
-<p>အလုပ်လျှောက်ထားရာတွင် မေးလ်အသုံးပြုရန်လိုအပ်ပါသည်
-မရှိပါက အကောင့်ဖွင့်ရန်လိုအပ်ပါသည်</p>
-<div>
+<p>This cannot be empty</p>
 
-
-
-
-<div id="consent"><h4>ဖြည့်စွက်ချက်များမှန်ကန်ပါသည်။ မိမိကိုယ်ရေးအချက်လက်များကို townwork နှင့် nihon de baito မှအလုပ်လျှောက်ရာတွင် အသုံးပြုခွင့်ပေးပါသည်။</h4>
-  YES<input type="checkbox" required>
-</div>
-
-<button id="button" type="submit" onclick=""> GO </button>
-
+<button id="button" type="submit" onclick="alert('応募のオートメーション始まります　よろしいですか？')">GO</button>
 </form>
-</div>
+
+
 
 <script>
 
